@@ -10,3 +10,17 @@
   font-family: 'Nunito', sans-serif;
   font-size: 14px;
 }
+
+.card{
+  @apply bg-blue-600 h-48 w-80 flex-1 rounded-lg relative overflow-hidden;
+}
+
+.card::before{
+  content: '';
+  @apply bg-indigo-800 h-80 w-80 -left-32 -top-10 absolute rounded-full;
+}
+
+.card::after{
+  content: '';
+  @apply bg-visaC2 h-44 w-44 absolute -right-14 -top-14 rounded-full;
+}
