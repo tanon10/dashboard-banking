@@ -35,13 +35,17 @@ export default function TransactionList() {
       icon: <MdOutlineFactCheck color="white" />,
     },
   ];
-  const bgColors = (status) => {
+
+  const colors = (status) => {
     switch (status) {
       case "Successfully":
-        return "bg-blue-500";
+        return `blue-600`;
+
+      case "":
+        return `red-600`;
 
       default:
-        return "bg-red-500";
+        return `orange-600`;
     }
   };
 
@@ -73,7 +77,7 @@ export default function TransactionList() {
             return (
               <div className="flex flex-row items-center border-b border-b-gray-200 py-3">
                 <div
-                  className={`h-10 w-10 bg-primaryBank rounded-lg flex items-center justify-center mr-3 ${bgColors(
+                  className={`h-10 w-10  rounded-lg flex items-center justify-center mr-3 bg-${colors(
                     val.status
                   )}`}
                 >
@@ -83,7 +87,7 @@ export default function TransactionList() {
                   <div className="text-base font-medium">{val.name}</div>
                   <div className="text-xs">{val.status}</div>
                 </div>
-                <div className="text-red-600">{val.price}</div>
+                <div className={`text-${colors(val.status)}`}>{val.price}</div>
               </div>
             );
           })}

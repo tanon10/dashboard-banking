@@ -24,3 +24,7 @@
   content: '';
   @apply bg-visaC2 h-44 w-44 absolute -right-14 -top-14 rounded-full;
 }
+
+.content-left::-webkit-scrollbar{
+  display: none;
+}
