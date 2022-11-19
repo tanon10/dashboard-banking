@@ -11,24 +11,28 @@ export default function TransactionList() {
   ];
   const yesterday = [
     {
+      id: 1,
       name: "Income: Salary Oct",
       status: "",
       price: "+$1200",
       icon: <MdMonetizationOn color="white" />,
     },
     {
+      id: 2,
       name: "Electric Bill",
       status: "Successfully",
       price: "-$480",
       icon: <MdOutlineElectricalServices color="white" />,
     },
     {
+      id: 3,
       name: "Income : Jane transfers",
       status: "",
       price: "+$500",
       icon: <MdOutlineFactCheck color="white" />,
     },
     {
+      id: 4,
       name: "Internet Bill",
       status: "Successfully",
       price: "-$100",
@@ -75,7 +79,10 @@ export default function TransactionList() {
         <div>
           {yesterday.map((val) => {
             return (
-              <div className="flex flex-row items-center border-b border-b-gray-200 py-3">
+              <div
+                key={val.id}
+                className={`flex flex-row items-center border-b border-b-gray-200 py-3`}
+              >
                 <div
                   className={`h-10 w-10  rounded-lg flex items-center justify-center mr-3 bg-${colors(
                     val.status

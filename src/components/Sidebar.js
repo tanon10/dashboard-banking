@@ -1,4 +1,4 @@
-import Logo from "../../assets/logo.png";
+import Logo from "../assets/logo.png";
 import {
   BiHomeAlt,
   BiCategoryAlt,
@@ -10,12 +10,12 @@ import { CiSettings } from "react-icons/ci";
 
 export default function Sidebar() {
   const menu = [
-    { name: "Home", icon: <BiHomeAlt /> },
-    { name: "Account", icon: <BiCategoryAlt /> },
-    { name: "Cards", icon: <BiCreditCard /> },
-    { name: "Contacts", icon: <BiGroup /> },
-    { name: "Load Calculator", icon: <BiCalculator /> },
-    { name: "Settings", icon: <CiSettings /> },
+    { id: 1, name: "Home", icon: <BiHomeAlt /> },
+    { id: 2, name: "Account", icon: <BiCategoryAlt /> },
+    { id: 3, name: "Cards", icon: <BiCreditCard /> },
+    { id: 4, name: "Contacts", icon: <BiGroup /> },
+    { id: 5, name: "Load Calculator", icon: <BiCalculator /> },
+    { id: 6, name: "Settings", icon: <CiSettings /> },
   ];
 
   const schedulePayments = ["Montly Rent", "Food Payment", "Utility Bills"];
@@ -30,10 +30,10 @@ export default function Sidebar() {
         <div>
           <div className="mb-6 text-indigo-700">Menu</div>
           <ul className="space-y-7">
-            {menu.map((val, index) => {
+            {menu.map((val) => {
               return (
                 <li
-                  key={index}
+                  key={val.id}
                   className="flex flex-rom items-center text-gray-500"
                 >
                   <div className="mr-5">{val.icon}</div>
@@ -46,7 +46,7 @@ export default function Sidebar() {
         <div>
           <div className="mt-20 text-indigo-700">Schedule Payments</div>
           <div className="mt-6 space-y-7">
-            {schedulePayments.map((val, index) => {
+            {schedulePayments.map((val) => {
               return (
                 <div className="flex items-center text-gray-500">
                   <div className="h-4 w-4 border border-gray-200 mr-4 rounded-full" />
